@@ -20,21 +20,33 @@ int main()
 {
     //variables
     float sum,temp,average;
-    int loop_num = 5;
+    const int loop_num = 5;
 
     // inital prompt for user
-    cout << "Please enter " << loop_num <<" numbers you want to average: " << endl;
+    cout << "Please enter five numbers." << endl;
+    cin >> temp;//1
+    sum +=temp;
+    cin >> temp;//2
+    sum +=temp;
+    cin >> temp;//3
+    sum +=temp;
+    cin >> temp;//4
+    sum +=temp;
+    cin >> temp;//5
+    sum +=temp;
 
+
+    /* better
     //for loop to easily prompt user multiple times
     for (int i = 0; i < loop_num ;i++){
-        cout << i+1 << ": ";
         cin >> temp;
         //summating the input together
         sum += temp;
     }
+    */
+    
     //outputting sum
     average = sum / loop_num;
-    cout << "Your average is: " << average << endl;
-
+    cout << "The average of those numbers is:" << endl << average << endl;
     return 0;
 }
