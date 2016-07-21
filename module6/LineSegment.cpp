@@ -22,8 +22,8 @@ LineSegment::LineSegment()
     Point point1 = Point();
     Point point2 = Point();
 
-    endOne =  point1;
-    endTwo =  point2;
+    setEnd1(point1);
+    setEnd2(point2);
 }
 
 /*************************

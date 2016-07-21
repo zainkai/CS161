@@ -24,5 +24,4 @@ int hailstone(int num){
 int main(){
 	cout << hailstone(3) << endl;
 	return 0;
-}
-*/
+}*/
