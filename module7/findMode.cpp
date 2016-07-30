@@ -127,14 +127,14 @@ vector<int> findMode(int data[],int arraySize)
     return modeVector;
 }
 
-/*
+
 int main()
 {
     int dataSet1[3] = {9,4,5};
     int dataSet2[10] = {2,2,5,5,7,7,0,0,4,4};
     int dataSet3[3] = {1,3,3};
     int dataSet4[6] = {3,3,3,8,8,8};
-    int dataSet5[1] = {99};
+    int dataSet5[3] = {99,99,99};
     int dataSet6[4] = {-1,-1,-2,5};
 
     cout << "Vector1" << endl;
@@ -158,7 +158,7 @@ int main()
     cout << endl;
 
     cout << "Vector5" << endl;
-    vector<int> Vector5 = findMode(dataSet5,1);
+    vector<int> Vector5 = findMode(dataSet5,3);
     printVector(Vector5);
     cout << endl;
 
@@ -167,4 +167,3 @@ int main()
     printVector(Vector6);
     cout << endl;
 }
-*/
