@@ -10,6 +10,12 @@
 
 using namespace std;
 
+/*************************
+** name: Board
+** Description: allocates space for board 
+** input: N/A
+** output: allocated board
+**************************/
 Board::Board()
 {
     //initializing array
@@ -26,10 +32,16 @@ Board::Board()
     }
 }
 
+/*************************
+** name: makeMove
+** Description: allocates an x or o for a position on the board
+** input: xcoord, ycoord, player (x or o)
+** output: 
+**************************/
 bool Board::makeMove(int xCoor,int yCoor,char player)
 {
-    if(playingBoard[xCoor][yCoor] == '.'){
-        playingBoard[xCoor][yCoor] = player;
+    if(playingBoard[yCoor][xCoor] == '.'){
+        playingBoard[yCoor][xCoor] = player;
         return true;
     }
     else{
@@ -38,6 +50,13 @@ bool Board::makeMove(int xCoor,int yCoor,char player)
     
 }
 
+/*************************
+** name: gameState
+** Description: Checks if theres a winner for vertical, horizontal
+** or diagonals. then checks if the board is a draw then unfinished.
+** input: N/A
+** output: N/A
+**************************/
 state Board::gameState()
 {
     state playerX = UNFINISHED;
@@ -88,24 +107,30 @@ state Board::gameState()
 
     //returning the winner...
     if(playerX == X_WON && playerO == UNFINISHED){
-        cout << "X WON" << endl;
+        //cout << "X WON" << endl;
         return X_WON;
     }
     else if(playerX == UNFINISHED && playerO == O_WON){
-        cout << "O WON" << endl;
+        //cout << "O WON" << endl;
         return O_WON;
     }
     else if(freespaces == 9){
-        cout << "Draw" << endl;
+        //cout << "Draw" << endl;
         return DRAW;
     }
     else if(playerX == UNFINISHED && playerO == UNFINISHED){
-        cout << "Unfinished" << endl;
+        //cout << "Unfinished" << endl;
         return UNFINISHED;
     }
 
 }
 
+/*************************
+** name: print
+** Description: prints the 3x3 array 
+** input: N/A
+** output: N/A
+**************************/
 void Board::print()
 {
     cout << "  0 1 2" << endl; 
@@ -119,38 +144,38 @@ void Board::print()
 }
 
 
-//unit tests
-int main(){
-    Board draw,horizontal,diagonals,vertical;
+// //unit tests
+// int main(){
+//     Board draw,horizontal,diagonals,vertical;
 
-    draw.makeMove(0,0,'o');
-    draw.makeMove(0,1,'x');
-    draw.makeMove(0,2,'o');
-    draw.makeMove(1,0,'x');
-    draw.makeMove(1,1,'x');
-    draw.makeMove(1,2,'o');
-    draw.makeMove(2,0,'o');
-    draw.makeMove(2,1,'o');
-    draw.makeMove(2,2,'x');
-    draw.print();
-    draw.gameState();
+//     draw.makeMove(0,0,'o');
+//     draw.makeMove(0,1,'x');
+//     draw.makeMove(0,2,'o');
+//     draw.makeMove(1,0,'x');
+//     draw.makeMove(1,1,'x');
+//     draw.makeMove(1,2,'o');
+//     draw.makeMove(2,0,'o');
+//     draw.makeMove(2,1,'o');
+//     draw.makeMove(2,2,'x');
+//     draw.print();
+//     draw.gameState();
 
-    vertical.makeMove(0,1,'o');
-    vertical.makeMove(1,1,'o');
-    vertical.makeMove(2,1,'o');
-    vertical.print();
-    vertical.gameState();
+//     vertical.makeMove(0,1,'o');
+//     vertical.makeMove(1,1,'o');
+//     vertical.makeMove(2,1,'o');
+//     vertical.print();
+//     vertical.gameState();
 
-    horizontal.makeMove(0,0,'x');
-    horizontal.makeMove(0,1,'x');
-    horizontal.makeMove(0,2,'x');
-    horizontal.print();
-    horizontal.gameState();
+//     horizontal.makeMove(0,0,'x');
+//     horizontal.makeMove(0,1,'x');
+//     horizontal.makeMove(0,2,'x');
+//     horizontal.print();
+//     horizontal.gameState();
 
-    diagonals.makeMove(0,0,'o');
-    diagonals.makeMove(1,1,'o');
-    diagonals.makeMove(2,2,'o');
-    diagonals.print();
-    diagonals.gameState();
+//     diagonals.makeMove(0,0,'o');
+//     diagonals.makeMove(1,1,'o');
+//     diagonals.makeMove(2,2,'o');
+//     diagonals.print();
+//     diagonals.gameState();
 
-}
+// }

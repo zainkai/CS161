@@ -21,6 +21,7 @@ class TicTacToe
     public:
         TicTacToe();
         void play();
+        void swapXO();
 };
 
 #endif
